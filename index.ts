@@ -16,13 +16,15 @@
  * OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  */
 import {
+    GraphQLResolveInfo,
+} from 'graphql/type';
+import {
     ArgumentNode,
     DirectiveNode,
     SelectionNode,
     FragmentDefinitionNode,
-    GraphQLResolveInfo,
     FieldNode,
-} from 'graphql';
+} from 'graphql/language';
 
 /**
  * Pre-compiled wildcard replacement regexp
@@ -597,7 +599,7 @@ export function fieldsProjection(
 }
 
 // istanbul ignore next
-if (process.env['IS_UNIT_TEST']) {
+if (process?.env['IS_UNIT_TEST']) {
     // noinspection JSUnusedGlobalSymbols
     Object.assign(module.exports, {
         getNodes,
