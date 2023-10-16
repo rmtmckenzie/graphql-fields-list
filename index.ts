@@ -599,7 +599,7 @@ export function fieldsProjection(
 }
 
 // istanbul ignore next
-if (process?.env['IS_UNIT_TEST']) {
+if (typeof process !== undefined && process.env['IS_UNIT_TEST']) {
     // noinspection JSUnusedGlobalSymbols
     Object.assign(module.exports, {
         getNodes,
